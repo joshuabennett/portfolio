@@ -2,27 +2,28 @@
     <div class='about'>
         <p class='hello float1'>Hi, these are <span class='name'>MY PROJECTS</span></p>
         <div class="projects-container">
-            <div class="project" v-for='project in projects'>
-                <div class="project-title">{{project.name}}</div>
-                <img class='thumb' :src="'../src/assets/' + project.subname + '-icon.svg'">
-                <div class="buttons-group">
-                    <button class="button"><a>MORE INFO</a></button>
-                    <button class="button"><a :href='"https://" + project.link'>CHECK IT OUT</a></button>
-                </div>
-                
-                <!-- <span class='tag tools is-info' v-for='tool in project.tools'>{{ tool }}</span> -->
-                <!-- <div class='overlay'>
-                    <a href='#'><img :src="'../src/assets/github.svg'"></a>
-                </div> -->
-            </div>
+            <transition-group class='projects-container' name='fade'>
+                <app-project
+                    v-for='project in projects' 
+                    
+                    :project='project' 
+                    :class='project.subname' 
+                    :key='project.subname'
+                    @expanded='expand($event)'>
+                </app-project>
+            </transition-group>
         </div>
     </div>
 </template>
 
 <script>
+import Project from './Project.vue';
+
 export default {
     data: function() {
         return {
+            isExpanded: false,
+            curProject: '',
             projects: [
                 {
                     name: 'Brackets',
@@ -54,6 +55,23 @@ export default {
                 }
             ]
         }
+    },
+    methods: {
+        expand(project) {
+            this.isExpanded = !this.isExpanded;
+            this.curProject = project.subname;
+            console.log(project.subname);
+            var projContainer = document.querySelector('.'+this.curProject);
+            if(projContainer.classList.contains('expanded')) {
+                projContainer.classList.remove('expanded');
+            } else {
+                projContainer.classList.add('expanded');
+            }
+
+        }
+    },
+    components: {
+        'app-project': Project
     }
 }
 </script>
@@ -159,6 +177,16 @@ p {
 a img {
     fill: white;
     opacity: 1;
+}
+.expanded {
+    width: 100vw;
+    transition: width 2s;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 @keyframes float {
 	0% {
