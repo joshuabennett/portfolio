@@ -3,21 +3,21 @@
         <p class='hello float1'>Hi, I'm <span class='name'>JOSHUA BENNETT</span></p><p class='hello float2'> I'm a self taught <bold>Front-End Web Developer</bold> located in <span class="city">Austin, Texas</span> looking for an opportunity as a intern or full-time position as a <bold>Junior Web Developer</bold></p>
         <div class="circle-container">
             <div class="circle">
-                <a href='https://github.com/joshuabennett'><img :src="'../src/assets/icon-github.png'"></a>
+                <a href='https://github.com/joshuabennett'><img :src="'assets/icon-github.png'"></a>
             </div>
             <div class="circle">
-                <a href='https://www.linkedin.com/in/joshua-bennett-9b964257/'><img :src="'../src/assets/icon-linkedin.png'"></a>
+                <a href='https://www.linkedin.com/in/joshua-bennett-9b964257/'><img :src="'assets/icon-linkedin.png'"></a>
             </div>
             <div class="circle">
-                <a href='mailto:joshuabennett@utexas.edu'><img :src="'../src/assets/icon-gmail.svg'"></a>
+                <a href='mailto:joshuabennett@utexas.edu'><img :src="'assets/icon-gmail.svg'"></a>
             </div>
         </div>
-        <div style="height: 2px; background-color: #EAEFF5; margin: 30px 100px 30px 100px;"></div>
+        <div class='break' style="height: 2px; background-color: #EAEFF5;"></div>
         <p class='hello'>I'm ok at these</p>
         <div class="smaller-circle"></div>
         <div class="logo-container">
             <div class="item" v-for='item in images'>
-                <img class='logo' :src="'../src/assets/'+item">
+                <img class='logo' :src="'assets/'+item">
                 <p>{{ filterName(item) }}</p>
             </div>
         </div>
@@ -144,5 +144,18 @@ br {
 
 		transform: translatey(0px);
 	}
+}
+.break {
+    margin: 30px 100px 30px 100px;
+}
+
+@media only screen and (max-width: 1336px) {
+    .break {
+        margin: 0;
+    }
+    .about {
+        transform: translateY(0);
+        top: 0;
+    }
 }
 </style>

@@ -3,14 +3,6 @@
          <!-- <img class='header-img' src='../assets/moon.svg'> -->
         <div class="tabs is-centered">
             <ul>
-                <li>
-                    <div class="svg-wrapper">
-                        <svg height="40" width="100" xmlns="http://www.w3.org/2000/svg">
-                            <rect class="shape" height="40" width="100" />
-                        </svg>
-                        <router-link to='/about' class='text'>HOME</router-link>
-                    </div>
-                </li>
                                 <li>
                     <div class="svg-wrapper">
                         <svg height="40" width="100" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,6 @@
 <template>
-    <div class='about'>
-        <p class='hello float1'>Hi, these are <span class='name'>MY PROJECTS</span></p>
+    <div class='projects'>
+        <p class='introduction float1'>Hi, these are <span class='name'>MY PROJECTS</span></p>
         <div class="projects-container">
             <transition-group class='projects-container' name='fade'>
                 <div
@@ -11,7 +11,7 @@
                 >
                     <div class="before-expand">
                         <div class="project-title">{{project.name}}</div>
-                        <img class='thumb' :src="'../src/assets/' + project.subname + '-icon.svg'">
+                        <img class='thumb' :src="'assets/' + project.subname + '-icon.svg'">
                         <div class="buttons-group">
                             <transition name='fade'>
                                 <button class="button more-info" @click='expand(project)' v-show='!isExpanded || curProject == project.subname'><a> {{ title }} </a></button>
@@ -159,8 +159,8 @@ export default {
     margin: 10px;
     color: white;
     font-family: 'Gudea', sans-serif;
-    font-size: 2em;
-    letter-spacing: 5px;
+    letter-spacing: calc(1px + .2vw);
+    letter-spacing: calc(1px + .2vw);
     font-weight: bold;
 }
 .project-title {
@@ -172,7 +172,7 @@ export default {
     letter-spacing: 5px;
     font-weight: bold;
 }
-.about {
+.projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -187,7 +187,7 @@ p {
     color: white;
     font-family: 'Gudea', sans-serif;
 }
-.hello {
+.introduction {
     background: rgba(0,0,0,0.5);
     padding: 10px 10px 10px 10px;
     border-radius: 15px;
@@ -312,11 +312,16 @@ a img {
       margin: 5px;
       height: auto;
       min-width: calc(200px + 10vw);
+      padding: 10px;
+  }
+  .after-expand {
+      padding: 0px 0px 0px 10px;
+      justify-content: space-between;
   }
   body, html, #app {
       overflow: auto;
   }
-  .about {
+  .projects {
       transform: translateY(0);
       top: 0;
   }
@@ -329,6 +334,7 @@ a img {
   }
   .buttons-group, .buttons-group .button {
       width: 100%;
+      margin: 2px;
   }
 }
 </style>
