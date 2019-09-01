@@ -150,6 +150,9 @@ br {
 }
 
 @media only screen and (max-width: 1336px) {
+    body, html, #app {
+        overflow: auto;
+    }   
     .break {
         margin: 0;
     }

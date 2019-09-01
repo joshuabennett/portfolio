@@ -118,6 +118,12 @@ header a, a:visited {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+@media only screen and (max-width: 1336px) {
+    .info {
+      transform: translateY(0);
+      height: auto;
+  }
+}
 
 
 </style>
