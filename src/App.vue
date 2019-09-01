@@ -3,9 +3,9 @@
     <div class="stars"></div>
     <app-header></app-header>
     <div class="info">
-    <transition name='fade' mode='out-in'>
-        <router-view></router-view>
-    </transition>
+      <transition name='fade' mode='out-in'>
+          <router-view></router-view>
+      </transition>
         <!-- <app-projects></app-projects> -->
         <!-- <app-resume></app-resume> -->
     </div>

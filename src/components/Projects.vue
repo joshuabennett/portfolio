@@ -22,7 +22,13 @@
                     <transition name='fade'>
                     <div class="after-expand" v-show='isExpanded && curProject == project.subname'>
                         <span class="tag is-white" v-for='tool in project.tools'> {{ tool }}</span>
-                        <p> {{ project.info }} </p>
+                        <p class='proj-info'> {{ project.info }} </p>
+                            <a class="button github-button" :href='project.github'>
+                                <span class="icon">
+                                <i class="fab fa-github"></i>
+                                </span>
+                                <span>GitHub</span>
+                            </a>
 
                     </div>
                     </transition>
@@ -47,7 +53,7 @@ export default {
                     name: 'Brackets',
                     subname: 'brackets',
                     link: 'brackets.joshuabennett.dev',
-                    github: '',
+                    github: 'https://github.com/joshuabennett/bracket-generator',
                     info: 'Built to create tournament brackets for Smash Bros. Ultimate. Create either a single, double, or round robin tournament for up to 16 players.',
                     tools: ['vue.js', 'bulma']
                 },
@@ -55,7 +61,7 @@ export default {
                     name: 'Anime Suggest',
                     subname: 'anime',
                     link: 'anime.joshuabennett.dev',
-                    github: '',
+                    github: 'https://github.com/joshuabennett/anime-recommendations',
                     info: 'Takes the users myanimelist.net username and evaluates their top watched anime. Then recommends 5 animes based on a score given to recommended Animes for each Anime in their list using the Jikan Animelist API.',
                     tools: ['vanilla js', 'bulma', 'Jikan API']
                 },
@@ -63,7 +69,7 @@ export default {
                     name: 'Mars Scoresheet',
                     subname: 'mars',
                     link: 'mars.joshuabennett.dev',
-                    github: '',
+                    github: 'https://github.com/joshuabennett/mars-scoresheet',
                     info: 'An app that tallys and adds the scores for a board game called Terraforming Mars. Shows results of the game and provides insight into each players best category scores.',
                     tools: ['vue.js', 'bulma', 'vee-validate']
                 },
@@ -84,12 +90,23 @@ export default {
             var projContainer = document.querySelector('.'+this.curProject);
             if (!this.isExpanded) {
                 projContainer.style.justifyContent = 'flex-start';
+               var mq = window.matchMedia( "(min-width: 1336px)" );
+                    if (mq.matches) {
+                        projContainer.parentNode.style.flexWrap = 'nowrap';
+                    }
+                    else {
+                        // window width is greater than 570px
+                    }
                 window.setTimeout(() => {
-                this.isExpanded = !this.isExpanded;
-                projContainer.style.justifyContent = 'space-around';
-            }, 600);
+                    this.isExpanded = !this.isExpanded;
+                    projContainer.style.justifyContent = 'space-around';
+                }, 600);
             } else {
                 this.isExpanded = !this.isExpanded;
+                window.setTimeout(() => {
+                    projContainer.parentNode.style.flexWrap = 'wrap';
+                }, 1000);
+
             }
             console.log(project.subname);
         
@@ -111,15 +128,28 @@ export default {
 </script>
 
 <style>
+.proj-info {
+    font-size: calc(10px + .4vw)
+}
 .tag {
     margin: 5px;
 }
-.button {
+.github-button {
+    margin-top: 5px;
+}
+.github-button:visited {
+    color: gray;
+}
+.github-button:hover {
+    color: black;
+}
+.buttons-group .button {
     background: transparent;
     border-radius: 0;
 }
-.button a {
+.buttons-group .button a {
     color: white;
+    font-size: 0.8vw;
 }
 .tools {
     margin-right: 3px;
@@ -136,8 +166,9 @@ export default {
 .project-title {
     text-transform: uppercase;
     color: white;
+    line-height: 1em;
     font-family: 'Gudea', sans-serif;
-    font-size: 1.5em;
+    font-size: calc(10px + .8vw);
     letter-spacing: 5px;
     font-weight: bold;
 }
@@ -167,6 +198,7 @@ p {
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 .project {
     display: flex;
@@ -271,5 +303,32 @@ a img {
         background-color: rgb(55, 133, 235);
         opacity: 1;
     }
+}
+@media only screen and (max-width: 1336px) {
+  .projects-container {
+      width: 90vw;
+  }
+  .project {
+      margin: 5px;
+      height: auto;
+      min-width: calc(200px + 10vw);
+  }
+  body, html, #app {
+      overflow: auto;
+  }
+  .about {
+      transform: translateY(0);
+      top: 0;
+  }
+  .info {
+      transform: translateY(0);
+      height: auto;
+  }
+ .buttons-group .button a {
+    font-size: 14px;
+  }
+  .buttons-group, .buttons-group .button {
+      width: 100%;
+  }
 }
 </style>

@@ -73,13 +73,14 @@ bold {
     margin: 10px;
     color: white;
     font-family: 'Gudea', sans-serif;
-    font-size: 2em;
-    letter-spacing: 5px;
+    font-size: calc(12px + 1vw);
+    letter-spacing: calc(1px + .2vw);
     font-weight: bold;
 }
 p {
     color: white;
     font-family: 'Gudea', sans-serif;
+    font-size: calc(10px + .4vw);
 }
 .hello {
     background: rgba(0,0,0,0.5);
@@ -102,6 +103,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 
 }
 .logo {
