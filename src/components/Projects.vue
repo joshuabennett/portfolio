@@ -325,10 +325,6 @@ a img {
       transform: translateY(0);
       top: 0;
   }
-  .info {
-      transform: translateY(0);
-      height: auto;
-  }
  .buttons-group .button a {
     font-size: 14px;
   }
