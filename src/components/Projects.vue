@@ -1,7 +1,7 @@
 <template>
     <div class='projects'>
         <p class='introduction float1'>Hi, these are <span class='name'>MY PROJECTS</span></p>
-        <div class="projects-container">
+        <div class="projects-contain">
             <transition-group class='projects-container' name='fade'>
                 <div
                     v-for='project in projects'
@@ -19,7 +19,7 @@
                             <button class="button"><a :href='"https://" + project.link'>CHECK IT OUT</a></button>
                         </div>
                     </div>
-                    <transition name='fade'>
+                    <transition name='fade-text'>
                     <div class="after-expand" v-show='isExpanded && curProject == project.subname'>
                         <span class="tag is-white" v-for='tool in project.tools'> {{ tool }}</span>
                         <p class='proj-info'> {{ project.info }} </p>
@@ -80,6 +80,14 @@ export default {
                     github: '',
                     info: 'A useful app for studying the generic and brand names of Pharmaceutical drugs in preparation for the PTCE (Pharmacy Technician Certification Exam). Also provides information on controlled schedules for drugs and basic mechanisms or classifications. All information provided from FDA Drug API.',
                     tools: ['vue.js', 'bulma', 'FDA API']
+                },
+                {
+                    name: 'Reddit Search',
+                    subname: 'reddit',
+                    link: 'reddit.joshuabennett.dev',
+                    github: '',
+                    info: 'Search reddit for the top comments on any subject without all the useless bulk.',
+                    tools: ['vue.js', 'bulma', 'Google Custom Search API', 'snoowrap']
                 }
             ]
         }
@@ -87,34 +95,55 @@ export default {
     methods: {
         expand(project) {
             this.curProject = project.subname;
-            var projContainer = document.querySelector('.'+this.curProject);
-            if (!this.isExpanded) {
-                projContainer.style.justifyContent = 'flex-start';
-               var mq = window.matchMedia( "(min-width: 1336px)" );
-                    if (mq.matches) {
-                        projContainer.parentNode.style.flexWrap = 'nowrap';
+            console.log(this.curProject);
+            var projects = document.querySelectorAll('.project');
+            console.log(projects);
+            if (this.isExpanded) {
+                this.isExpanded = false;
+                for (let i = 0; i < projects.length; i++) {
+                    if (!projects[i].classList.contains(this.curProject)) {
+                        projects[i].classList.remove('shrinked');
+                    } else {
+                        projects[i].classList.remove('expanded');
                     }
-                    else {
-                        // window width is greater than 570px
-                    }
-                window.setTimeout(() => {
-                    this.isExpanded = !this.isExpanded;
-                    projContainer.style.justifyContent = 'space-around';
-                }, 600);
+                }
             } else {
-                this.isExpanded = !this.isExpanded;
-                window.setTimeout(() => {
-                    projContainer.parentNode.style.flexWrap = 'wrap';
-                }, 1000);
+                this.isExpanded = true;
+                for (let i = 0; i < projects.length; i++) {
+                    if (!projects[i].classList.contains(this.curProject)) {
+                        projects[i].classList.add('shrinked');
+                    } else {
+                        projects[i].classList.add('expanded');
+                        projects[i].style.justifyContent = 'flex-start';
+                    }
+                }
+            }
 
-            }
-            console.log(project.subname);
-        
-            if(projContainer.classList.contains('expanded')) {
-                projContainer.classList.remove('expanded');
-            } else {
-                projContainer.classList.add('expanded');
-            }
+            // var projContainer = document.querySelector('.'+this.curProject);
+            // if (!this.isExpanded) {
+            //     this.isExpanded = !this.isExpanded;
+            //    // projContainer.style.justifyContent = 'flex-start';
+            //    var mq = window.matchMedia( "(min-width: 1336px)" );
+            //         if (mq.matches) {
+            //             // projContainer.parentNode.style.flexWrap = 'nowrap';
+            //         }
+            //         else {
+            //             // window width is greater than 570px
+            //         }
+            //     window.setTimeout(() => {
+            //         projContainer.classList.add('expanded');
+            //        // projContainer.style.justifyContent = 'space-around';
+                    
+            //     }, 500);
+            // } else {
+            //     this.isExpanded = !this.isExpanded;
+            //     window.setTimeout(() => {
+            //         //projContainer.parentNode.style.flexWrap = 'wrap';
+            //         projContainer.classList.remove('expanded');
+            //     }, 100);
+
+            // }
+            // console.log(project.subname);
             
 
             this.title == 'MORE INFO' ? this.title = 'LESS INFO' : this.title = 'MORE INFO';
@@ -179,9 +208,9 @@ export default {
     align-items: center;
     text-align: left;
     padding: 25px 50px 25px 50px;
-      position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 p {
     color: white;
@@ -200,6 +229,14 @@ p {
     width: 100%;
     flex-wrap: wrap;
 }
+.projects-contain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
 .project {
     display: flex;
     flex-direction: row;
@@ -265,8 +302,14 @@ a img {
     opacity: 1;
 }
 .expanded {
-    width: 100vw;
+    width: 90vw;
     transition: width 2s;
+}
+.shrinked {
+    margin: 0px;
+    padding: 0px;
+    width: 0px;
+    transition: all 0s;
 }
 .fade-enter-active {
     transition: opacity 1.5s;
@@ -277,6 +320,17 @@ a img {
   transition: opacity .5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.fade-text-enter-active {
+    transition: opacity 1.5s;
+    transition-delay: 1s;
+}
+.fade-text-leave-active {
+  transition-delay: 0.5s;
+  transition: opacity .5s;
+}
+.fade-text-enter, .fade-text-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 @keyframes float {

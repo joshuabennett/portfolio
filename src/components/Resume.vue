@@ -6,6 +6,7 @@
                 <div class="details has-text-centered">
                     <p class='detail-title'>Joshua Bennett</p>
                     <p>joshuabennett@utexas.edu</p>
+                    <a href='https://github.com/joshuabennett'>github.com/joshuabennett</a>
                     <p>856-906-0146</p>
                 </div>
                 <div class="intro has-text-centered">
@@ -53,8 +54,8 @@
                     </div>
                     <div class="column is-two-thirds section-info">
                         <p><span style='font-weight: bold;'>Portfolio</span> - joshuabennett.dev</p>
-                        <p>You are here. I built this website using Vue.js and Bulma. I used it to showcase my aesthetic in simple and responsive UI/UX Design and mastery of CSS/HTML.</p>
-                        <p class='techs'>Vue.js, Bulma, CSS, HTML</p>
+                        <p>You are here. I built this website using Vue.js and Bulma. I used it to showcase my aesthetic with a simple and responsive UI/UX Design and mastery of CSS/HTML.</p>
+                        <p class='techs'>Vue.js, Bulma, CSS, HTML, Vue-Router</p>
                         <br>
                         <p><span style='font-weight: bold;'>Tournament Brackets Manager</span> - <a href='brackets.joshuabennett.dev'>brackets.joshuabennett.dev</a></p>
                         <p> Built using Vue.js and Bulma to make tournament brackets for 4 to 16 players in various formats. Primarly built to showcase my mastery of Vue.js and it's component communication. </p>
@@ -62,11 +63,15 @@
                         <br>
                         <p><span style='font-weight: bold;'>Terraforming Mars Board Game Scoresheet</span> - <a href='mars.joshuabennett.dev'>mars.joshuabennett.dev</a></p>
                         <p>  Created a mobile-friendly SPA to easily score results for a popular board game, Terraforming Mars. Ranks each players final scores and gives individual rankings for each scoring category.</p>
-                        <p class='techs'>Vue.js, Bulma, CSS, HTML</p>
+                        <p class='techs'>Vue.js, Bulma, CSS/SASS, HTML, Vee-validate</p>
                         <br>
                         <p><span style='font-weight: bold;'>Anime Recommendations</span> - <a href='anime.joshuabennett.dev'>anime.joshuabennett.dev</a></p>
-                        <p> Developed a SPA using Jikan API that takes a user's MyAnimeList.net username and extracts their favorite anime. It uses this information to generate recommendations by scoring each of their watched Anime's individual recommendations, weighting them and adding those scores together and finally returning the 5 best recommendations for that user.</p>
-                        <p class='techs'>Javascript, Bulma, Jikan API, CSS, HTML</p>
+                        <p> Developed a SPA using Jikan RESTful API that takes a user's MyAnimeList.net username and extracts their favorite anime. It uses this information to generate recommendations by scoring each of their watched Anime's individual recommendations, weighting them and adding those scores together and finally returning the 5 best recommendations for that user.</p>
+                        <p class='techs'>Vanilla Javascript, Bulma, Jikan API, CSS, HTML</p>
+                        <br>
+                        <p><span style='font-weight: bold;'>Reddit Search</span> - <a href='anime.joshuabennett.dev'>reddit.joshuabennett.dev</a></p>
+                        <p>  Presents Reddit's top comments on a custom search while discarding extraneous comments allowing the user to find other reddit users' opinion on any subject quickly. Utilizes Google's Custom Search API to get better results then Reddit's search, then uses the snoowrap library as a wrapper for Reddit's API to extract the information which is then displayed using Bulma and Vue.js.</p>
+                        <p class='techs'>Vue.js, Bulma, Google Custom Search API, snoowrap</p>
                     </div>
                 </div>
                 <div class="columns">
@@ -81,6 +86,10 @@
                             Feb 2018 - Present
                         </p>
                         <p>Pharmacy Technician</p>
+                        <br>
+                        <p>--> Green Card Certified by Pharmacy Technician Certification Board</p>
+                        <p>--> Utilize Intercom Plus systems to assist customers with various tasks such as selling prescriptions, updating information, and refilling medications.</p>
+                        <p>--> Fill over 300 prescriptions daily by using drug knowledge to count and prepare medications.</p> 
                     </div>
                 </div>
             </div>
@@ -153,4 +162,8 @@ body, html, #app {
     font-size: 14px;
     color: rgb(0, 195, 255);
 }
+.section-info a:hover {
+    color: lightblue;
+}
+
 </style>
