@@ -1,6 +1,12 @@
 <template>
     <div class='resume'>
         <p class='resume-hello float1'>Hi, this is <span class='name'>MY RESUME</span></p>
+        <button class="button">
+            <span class="icon">
+                <i class="fas fa-download"></i>
+            </span>
+            <span>Download as PDF</span>
+        </button>
         <div class="resume-section">
             <div class="sections-container resume-hello">
                 <div class="details has-text-centered">
@@ -114,7 +120,7 @@ body, html, #app {
     align-items: center;
     text-align: left;
     padding: 25px 50px 25px 50px;
-      position: relative;
+    position: relative;
 
 }
 .resume-section {
@@ -151,6 +157,7 @@ body, html, #app {
 }
 .intro {
     padding: 1vw;
+    font-size: calc(10px + 0.5vw);
 }
 .detail-title {
     font-size: calc(14px + 1.5vw);
@@ -164,6 +171,19 @@ body, html, #app {
 }
 .section-info a:hover {
     color: lightblue;
+}
+@media only screen and (max-width: 780px) {
+    .resume-section {
+        width: 85vw;
+    }
+}
+.button {
+    margin: 1em;
+    background: transparent;
+    color: white;
+}
+.button:hover {
+    color: plum;
 }
 
 </style>

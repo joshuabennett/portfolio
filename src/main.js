@@ -9,6 +9,7 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
+    { path: '/', component: About },
     { path: '/about', component: About },
     { path: '/projects', component: Projects },
     { path: '/resume', component: Resume }
