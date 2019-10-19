@@ -109,11 +109,6 @@ export default {
 </script>
 
 <style>
-body, html, #app {
-    overflow: auto;
-    margin: 0;
-    padding: 0;
-}
 .resume {
     margin: auto;
     display: flex;

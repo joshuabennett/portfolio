@@ -85,7 +85,7 @@ export default {
                     name: 'Reddit Search',
                     subname: 'reddit',
                     link: 'reddit.joshuabennett.dev',
-                    github: '',
+                    github: 'https://github.com/joshuabennett/reddit-search',
                     info: 'Search reddit for the top comments on any subject without all the useless bulk.',
                     tools: ['vue.js', 'bulma', 'Google Custom Search API', 'snoowrap']
                 }
@@ -246,7 +246,7 @@ p {
 .project:hover {
     animation-play-state: paused;
 }
-.more-ifo:hover {
+.more-info:hover {
     background-color: rgb(33, 75, 129);
     box-shadow: 0 0 0 0.125em purple;
     /* animation: pulse 3s ease-in-out infinite; */
@@ -342,8 +342,14 @@ a img {
   .project {
       margin: 5px;
       height: auto;
-      min-width: calc(200px + 10vw);
+      min-width: calc(250px + 10vw);
       padding: 10px;
+  }
+  .shrinked {
+      margin: 0;
+      height: 0;
+      padding: 0;
+      width: 0;
   }
   .after-expand {
       padding: 0px 0px 0px 10px;
