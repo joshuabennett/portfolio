@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import Home from './components/Home.vue';
 import Resume from './components/Resume.vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
@@ -25,7 +24,6 @@ export default {
   components: {
     'app-header': Header,
     'app-footer': Footer,
-    'app-home': Home,
     'app-about': About,
     'app-resume': Resume,
     'app-projects': Projects

@@ -9,7 +9,7 @@
                 <a href='https://www.linkedin.com/in/joshua-bennett-9b964257/'><img :src="'assets/icon-linkedin.png'"></a>
             </div>
             <div class="circle">
-                <a href='mailto:joshuabennett@utexas.edu'><img :src="'assets/icon-google.svg'"></a>
+                <a href='mailto:joshuabennett@utexas.edu'><img :src="'assets/icon-google.png'"></a>
             </div>
         </div>
         <p class='hello'>I'm ok at these</p>
@@ -63,9 +63,9 @@ bold {
     align-items: center;
     text-align: left;
     padding: 25px 50px 25px 50px;
-      position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .name {
     text-transform: uppercase;

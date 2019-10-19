@@ -40,7 +40,6 @@
 </template>
 
 <script>
-import Project from './Project.vue';
 
 export default {
     data: function() {
@@ -124,36 +123,35 @@ export default {
             this.title == 'MORE INFO' ? this.title = 'LESS INFO' : this.title = 'MORE INFO';
 
         }
-    },
-    components: {
-        'app-project': Project
     }
 }
 </script>
 
-<style>
-.proj-info {
-    font-size: calc(10px + .4vw)
+<style lang='scss'>
+p {
+    color: white;
+    font-family: 'Gudea', sans-serif;
 }
 .tag {
     margin: 5px;
 }
 .github-button {
     margin-top: 5px;
+    &:visited {
+        color: gray;
+    }
+    &:hover {
+        color: black;
+    }
 }
-.github-button:visited {
-    color: gray;
-}
-.github-button:hover {
-    color: black;
-}
+
 .buttons-group .button {
     background: transparent;
     border-radius: 0;
-}
-.buttons-group .button a {
-    color: white;
-    font-size: 0.8vw;
+    a {
+        color: white;
+        font-size: 0.8vw;
+    }
 }
 .tools {
     margin-right: 3px;
@@ -166,6 +164,12 @@ export default {
     font-size: calc(16px + 0.75vw);
     letter-spacing: calc(1px + .2vw);
     font-weight: bold;
+}
+.introduction {
+    background: rgba(0,0,0,0.5);
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px;
+    margin: 5px;
 }
 .project-title {
     text-transform: uppercase;
@@ -187,16 +191,6 @@ export default {
     top: 50%;
     transform: translateY(-50%);
 }
-p {
-    color: white;
-    font-family: 'Gudea', sans-serif;
-}
-.introduction {
-    background: rgba(0,0,0,0.5);
-    padding: 10px 10px 10px 10px;
-    border-radius: 15px;
-    margin: 5px;
-}
 .projects-container {
     display: flex;
     flex-direction: row;
@@ -211,7 +205,6 @@ p {
     width: 100%;
     flex-wrap: wrap;
 }
-
 .project {
     display: flex;
     flex-direction: row;
@@ -227,6 +220,12 @@ p {
     background: rgba(0,0,0,0.5);
     animation: float 5s ease-in-out infinite;
     transition: all 1s;
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+.proj-info {
+    font-size: calc(10px + .4vw)
 }
 .before-expand {
     display: flex;
@@ -241,10 +240,6 @@ p {
 }
 .thumb {
     height: 50%;
-}
-
-.project:hover {
-    animation-play-state: paused;
 }
 .more-info:hover {
     background-color: rgb(33, 75, 129);
