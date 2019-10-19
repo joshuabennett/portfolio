@@ -111,14 +111,18 @@ export default {
 <style>
 body, html, #app {
     overflow: auto;
+    margin: 0;
+    padding: 0;
 }
 .resume {
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: left;
     padding: 25px 50px 25px 50px;
+    width: 100vw;
     position: relative;
 
 }

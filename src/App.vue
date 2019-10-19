@@ -34,6 +34,11 @@ export default {
 </script>
 
 <style lang="scss">
+body, html, #app {
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}
 .push {
   margin-top: 1vw;
 }
@@ -68,7 +73,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 }
 
 * {
