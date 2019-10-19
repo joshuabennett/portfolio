@@ -9,7 +9,7 @@
                 <a href='https://www.linkedin.com/in/joshua-bennett-9b964257/'><img :src="'assets/icon-linkedin.png'"></a>
             </div>
             <div class="circle">
-                <a href='mailto:joshuabennett@utexas.edu'><img :src="'assets/icon-gmail.svg'"></a>
+                <a href='mailto:joshuabennett@utexas.edu'><img :src="'assets/icon-google.svg'"></a>
             </div>
         </div>
         <p class='hello'>I'm ok at these</p>

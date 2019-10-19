@@ -13,9 +13,9 @@
             <div class="sections-container resume-hello">
                 <div class="details has-text-centered">
                     <p class='detail-title'>Joshua Bennett</p>
-                    <p><i class='fas fa-envelope'></i> joshuabennett@utexas.edu</p>
-                    <i class='fab fa-github'></i><a href='https://github.com/joshuabennett'> github.com/joshuabennett</a>
-                    <p><i class='fas fa-phone'></i> 856-906-0146</p>
+                    <p><i class='fas fa-envelope'></i>  joshuabennett@utexas.edu</p>
+                    <i class='fab fa-github'></i><a href='https://github.com/joshuabennett'>  github.com/joshuabennett</a>
+                    <p><i class='fas fa-phone'></i>  856-906-0146</p>
                 </div>
                 <div class="intro has-text-centered">
                     I'm a self-taught Front-End Web Developer looking for an internship or full-time position. I've got a knack for problem-solving. I genuinely love to learn. I've got an artistic outlook and love to design and build things. I'm very passionate about what I do and I strive to be the best. I'm excited to start my career and work with other intelligent people to build amazing ideas.
@@ -70,15 +70,15 @@
                         <p class='techs'>Vue.js, Bulma, CSS, HTML</p>
                         <br>
                         <p><span style='font-weight: bold;'>Terraforming Mars Board Game Scoresheet</span> - <a href='mars.joshuabennett.dev'>mars.joshuabennett.dev</a></p>
-                        <p>  Created a mobile-friendly SPA to easily score results for a popular board game, Terraforming Mars. Ranks each players final scores and gives individual rankings for each scoring category.</p>
+                        <p>  Created a mobile-friendly web application that evaluates the scores of players in the popular board game ‘Terraforming Mars’. Incorporated the vee-validate library to validate all user inputs. Exploited SASS to quickly establish a corresponding theme with Bulma.</p>
                         <p class='techs'>Vue.js, Bulma, CSS/SASS, HTML, Vee-validate</p>
                         <br>
                         <p><span style='font-weight: bold;'>Anime Recommendations</span> - <a href='anime.joshuabennett.dev'>anime.joshuabennett.dev</a></p>
-                        <p> Developed a SPA using Jikan RESTful API that takes a user's MyAnimeList.net username and extracts their favorite anime. It uses this information to generate recommendations by scoring each of their watched Anime's individual recommendations, weighting them and adding those scores together and finally returning the 5 best recommendations for that user.</p>
+                        <p> Developed an algorithm using the Jikan API to evaluate a MyAnimeList.net user’s collection of watched anime and generate the 5 best recommendations for anime they should watch.</p>
                         <p class='techs'>Vanilla Javascript, Bulma, Jikan API, CSS, HTML</p>
                         <br>
                         <p><span style='font-weight: bold;'>Reddit Search</span> - <a href='anime.joshuabennett.dev'>reddit.joshuabennett.dev</a></p>
-                        <p>  Presents Reddit's top comments on a custom search while discarding extraneous comments allowing the user to find other reddit users' opinion on any subject quickly. Utilizes Google's Custom Search API to get better results then Reddit's search, then uses the snoowrap library as a wrapper for Reddit's API to extract the information which is then displayed using Bulma and Vue.js.</p>
+                        <p>  Leveraged two APIs to perform a custom search on Reddit, but using Google’s superior search algorithms. Discarded extraneous information and pleasantly displayed results using Vue.js and Bulma.</p>
                         <p class='techs'>Vue.js, Bulma, Google Custom Search API, snoowrap</p>
                     </div>
                 </div>
@@ -95,9 +95,6 @@
                         </p>
                         <p>Pharmacy Technician</p>
                         <br>
-                        <p>--> Green Card Certified by Pharmacy Technician Certification Board</p>
-                        <p>--> Utilize Intercom Plus systems to assist customers with various tasks such as selling prescriptions, updating information, and refilling medications.</p>
-                        <p>--> Fill over 300 prescriptions daily by using drug knowledge to count and prepare medications.</p> 
                     </div>
                 </div>
             </div>
