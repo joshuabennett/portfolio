@@ -12,7 +12,6 @@
                 <a href='mailto:joshuabennett@utexas.edu'><img :src="'assets/icon-gmail.svg'"></a>
             </div>
         </div>
-        <div class='break' style="height: 2px; background-color: #EAEFF5;"></div>
         <p class='hello'>I'm ok at these</p>
         <div class="smaller-circle"></div>
         <div class="logo-container">
@@ -73,7 +72,7 @@ bold {
     margin: 10px;
     color: white;
     font-family: 'Gudea', sans-serif;
-    font-size: calc(12px + 1vw);
+    font-size: calc(16px + 0.75vw);
     letter-spacing: calc(1px + .2vw);
     font-weight: bold;
 }
@@ -153,9 +152,6 @@ br {
     body, html, #app {
         overflow: auto;
     }   
-    .break {
-        margin: 0;
-    }
     .about {
         transform: translateY(0);
         top: 0;

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="stars"></div>
-    <app-header></app-header>
+    <app-header class='push'></app-header>
     <div>
       <transition name='fade' mode='out-in'>
           <router-view></router-view>
@@ -34,6 +34,9 @@ export default {
 </script>
 
 <style lang="scss">
+.push {
+  margin-top: 1vw;
+}
 html {
   height: 100%;
   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
@@ -118,6 +121,7 @@ header a, a:visited {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
 @media only screen and (max-width: 1336px) {
     .info {
       transform: translateY(0);

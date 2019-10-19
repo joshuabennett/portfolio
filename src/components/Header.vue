@@ -84,8 +84,6 @@ html, body {
   stroke-dashoffset: 0;
   stroke-dasharray: 760;
 }
-    .container {
-    }
     li a {
         font-family: 'Lexend Deca', sans-serif;
     }

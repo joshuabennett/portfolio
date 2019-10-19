@@ -1,19 +1,21 @@
 <template>
     <div class='resume'>
         <p class='resume-hello float1'>Hi, this is <span class='name'>MY RESUME</span></p>
-        <button class="button">
-            <span class="icon">
-                <i class="fas fa-download"></i>
-            </span>
-            <span>Download as PDF</span>
-        </button>
+        <a href='assets/joshua-bennett-resume.pdf' download>
+            <button class="button download-button">
+                <span class="icon">
+                    <i class="fas fa-download"></i>
+                </span>
+                <span>Download as PDF</span>
+            </button>
+        </a>
         <div class="resume-section">
             <div class="sections-container resume-hello">
                 <div class="details has-text-centered">
                     <p class='detail-title'>Joshua Bennett</p>
-                    <p>joshuabennett@utexas.edu</p>
-                    <a href='https://github.com/joshuabennett'>github.com/joshuabennett</a>
-                    <p>856-906-0146</p>
+                    <p><i class='fas fa-envelope'></i> joshuabennett@utexas.edu</p>
+                    <i class='fab fa-github'></i><a href='https://github.com/joshuabennett'> github.com/joshuabennett</a>
+                    <p><i class='fas fa-phone'></i> 856-906-0146</p>
                 </div>
                 <div class="intro has-text-centered">
                     I'm a self-taught Front-End Web Developer looking for an internship or full-time position. I've got a knack for problem-solving. I genuinely love to learn. I've got an artistic outlook and love to design and build things. I'm very passionate about what I do and I strive to be the best. I'm excited to start my career and work with other intelligent people to build amazing ideas.
@@ -143,7 +145,7 @@ body, html, #app {
     margin: 10px;
     color: white;
     font-family: 'Gudea', sans-serif;
-    font-size: calc(12px + 1vw);
+    font-size: calc(16px + 0.75vw);
     letter-spacing: calc(1px + .2vw);
     font-weight: bold;
 }
@@ -177,13 +179,18 @@ body, html, #app {
         width: 85vw;
     }
 }
-.button {
+.download-button {
     margin: 1em;
     background: transparent;
     color: white;
 }
-.button:hover {
+.download-button:hover {
     color: plum;
+    border: 1px solid plum;
+}
+.download-button:focus {
+    color: lightgray;
+    border: 1px solid lightgray;
 }
 
 </style>

@@ -104,6 +104,7 @@ export default {
                     if (!projects[i].classList.contains(this.curProject)) {
                         projects[i].classList.remove('shrinked');
                     } else {
+                        projects[i].style.justifyContent = 'center';
                         projects[i].classList.remove('expanded');
                     }
                 }
@@ -118,32 +119,6 @@ export default {
                     }
                 }
             }
-
-            // var projContainer = document.querySelector('.'+this.curProject);
-            // if (!this.isExpanded) {
-            //     this.isExpanded = !this.isExpanded;
-            //    // projContainer.style.justifyContent = 'flex-start';
-            //    var mq = window.matchMedia( "(min-width: 1336px)" );
-            //         if (mq.matches) {
-            //             // projContainer.parentNode.style.flexWrap = 'nowrap';
-            //         }
-            //         else {
-            //             // window width is greater than 570px
-            //         }
-            //     window.setTimeout(() => {
-            //         projContainer.classList.add('expanded');
-            //        // projContainer.style.justifyContent = 'space-around';
-                    
-            //     }, 500);
-            // } else {
-            //     this.isExpanded = !this.isExpanded;
-            //     window.setTimeout(() => {
-            //         //projContainer.parentNode.style.flexWrap = 'wrap';
-            //         projContainer.classList.remove('expanded');
-            //     }, 100);
-
-            // }
-            // console.log(project.subname);
             
 
             this.title == 'MORE INFO' ? this.title = 'LESS INFO' : this.title = 'MORE INFO';
@@ -188,7 +163,7 @@ export default {
     margin: 10px;
     color: white;
     font-family: 'Gudea', sans-serif;
-    letter-spacing: calc(1px + .2vw);
+    font-size: calc(16px + 0.75vw);
     letter-spacing: calc(1px + .2vw);
     font-weight: bold;
 }
@@ -251,7 +226,7 @@ p {
     padding: 20px;
     background: rgba(0,0,0,0.5);
     animation: float 5s ease-in-out infinite;
-    transition: width 1s;
+    transition: all 1s;
 }
 .before-expand {
     display: flex;
@@ -309,7 +284,9 @@ a img {
     margin: 0px;
     padding: 0px;
     width: 0px;
-    transition: all 0s;
+    height: 0px;
+    opacity: 0;
+    transition: all 0.5s;
 }
 .fade-enter-active {
     transition: opacity 1.5s;
