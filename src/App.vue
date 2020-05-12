@@ -29,10 +29,21 @@ export default {
     "app-projects": Projects
   },
   created() {
-    document.documentElement.style.setProperty(
-      "--vh",
-      `${window.innerHeight / 100}px`
-    );
+    function setDocHeight() {
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.innerHeight / 100}px`
+      );
+    }
+
+    window.addEventListener("resize", function() {
+      setDocHeight();
+    });
+    window.addEventListener("orientationchange", function() {
+      setDocHeight();
+    });
+
+    setDocHeight();
   }
 };
 </script>
@@ -44,12 +55,12 @@ html,
   overflow: auto;
   margin: 0;
   padding: 0;
+  height: calc(var(--vh, 1vh) * 100);
 }
 .push {
   margin-top: 1vw;
 }
 html {
-  height: calc(var(--vh, 1vh) * 100);
   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   overflow: hidden;
 }
@@ -83,7 +94,6 @@ html {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: calc(var(--vh, 1vh) * 100);
 }
 
 * {
