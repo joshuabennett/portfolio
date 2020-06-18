@@ -82,6 +82,13 @@ html {
     from(rgba(0, 0, 0, 1)),
     to(rgba(0, 0, 0, 0))
   );
+  mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
 }
 
 #app {
