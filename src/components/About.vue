@@ -6,8 +6,8 @@
     </p>
     <p class="hello float2">
       I'm a self taught
-      <bold>Front-End Web Developer</bold>located in
-      <span class="city">Austin, Texas</span> looking for an opportunity as a intern or full-time position as a
+      <bold>Front-End Web Developer{{" "}}</bold>located in
+      <span class="city">Austin, Texas</span> looking for an opportunity for an internship or full-time position as a
       <bold>Junior Web Developer</bold>
     </p>
     <div class="circle-container">
@@ -27,7 +27,7 @@
         </a>
       </div>
     </div>
-    <p class="hello">I'm ok at these</p>
+    <p class="hello">I'm pretty ok at these</p>
     <div class="smaller-circle"></div>
     <div class="logo-container">
       <div class="item" v-for="item in images" :key="item">
@@ -51,7 +51,7 @@ export default {
         "icon-sass.svg",
         "icon-vscode.svg",
         "icon-vue.svg",
-        "icon-react.png"
+        "icon-react.svg"
       ]
     };
   },

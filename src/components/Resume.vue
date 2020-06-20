@@ -52,7 +52,10 @@
           <div class="column is-one-third section-title has-text-right">PROJECTS</div>
           <div class="column is-two-thirds section-info">
             <p>
-              <span style="font-weight: bold;">MTGArena Stats</span> - arena-stats.firebaseapp.com
+              <span style="font-weight: bold;">MTGArena Stats</span> -
+              <a
+                href="https://arena-stats.firebaseapp.com/login?email=test@test.com&amp;password=test123"
+              >arena.joshuabennett.dev</a>
             </p>
             <p>A full-fledged profile and statistic web application built in React that imports data from a User's decks in the MTG Arena program and creates a profile and statistics from them. Leveraged the Scryfall API using the Axios library to acquire data from imported cards. Performed complex queries with Firebase's Firestore NOSQL database. Stylized with SASS and FontAwesome Libraries.</p>
             <p
@@ -82,7 +85,7 @@
             <br />
             <p>
               <span style="font-weight: bold;">Reddit Search</span> -
-              <a href="https://anime.joshuabennett.dev">reddit.joshuabennett.dev</a>
+              <a href="https://reddit.joshuabennett.dev">reddit.joshuabennett.dev</a>
             </p>
             <p>Leveraged two APIs to perform a custom search on Reddit, but using Google’s superior search algorithms. Discarded extraneous information and pleasantly displayed results using Vue.js and Bulma.</p>
             <p class="techs">Vue.js, Bulma, Google Custom Search API, snoowrap</p>

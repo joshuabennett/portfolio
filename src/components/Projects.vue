@@ -28,10 +28,6 @@
               <button class="button">
                 <a :href="`https://${project.link}`">CHECK IT OUT</a>
               </button>
-              <p class="some-extra-text" v-if="project.subname == 'arena'">
-                username: test@test.com
-                <br />password: test123
-              </p>
             </div>
           </div>
           <transition name="fade-text">
@@ -63,7 +59,8 @@ export default {
         {
           name: "MTGArena Stats",
           subname: "arena",
-          link: "arena-stats.firebaseapp.com",
+          link:
+            "arena-stats.firebaseapp.com/login?email=test@test.com&password=test123",
           github: "https://github.com/joshuabennett/mtg-arena-stats",
           info:
             "A React Web App that allows you to import decks youve built using Wizards of the Coasts MTG Arena application in Limited Draft Environment. It then stores the decks in your profile and analyzes the data for statistics and sharing.",
