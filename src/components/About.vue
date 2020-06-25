@@ -1,5 +1,11 @@
 <template>
   <div class="about has-text-centered">
+    <div class="sky">
+      <div class="p p-1"></div>
+      <div class="p p-2"></div>
+      <div class="p p-3"></div>
+    </div>
+
     <p class="hello float1">
       Hi, I'm
       <span class="name">JOSHUA BENNETT</span>
@@ -55,6 +61,32 @@ export default {
       ]
     };
   },
+  mounted() {
+    var comet1 = this.$el.querySelector(".p-1");
+    var comet2 = this.$el.querySelector(".p-2");
+    var comet3 = this.$el.querySelector(".p-3");
+
+    function setProperty(startPos, comet) {
+      comet.style.setProperty("--start-pos", startPos + "%");
+    }
+
+    function changeAnimationTime1() {
+      var animationDuration = Math.random();
+      setProperty(animationDuration * 100, comet1);
+    }
+    function changeAnimationTime2() {
+      var animationDuration = Math.random();
+      setProperty(animationDuration * 100, comet2);
+    }
+    function changeAnimationTime3() {
+      var animationDuration = Math.random();
+      setProperty(animationDuration * 100, comet3);
+    }
+
+    setInterval(changeAnimationTime1, 7000);
+    setInterval(changeAnimationTime2, 8000);
+    setInterval(changeAnimationTime3, 10000);
+  },
   methods: {
     filterName(item) {
       var str = item.substring(item.indexOf("-") + 1, item.indexOf("."));
@@ -65,6 +97,64 @@ export default {
 </script>
 
 <style>
+@keyframes particleAnimation {
+  0% {
+    left: -400px;
+    opacity: 25%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    left: calc(100%);
+    opacity: 25%;
+  }
+}
+
+.sky {
+  position: absolute;
+  transform: rotateZ(45deg);
+  height: 60vh;
+  width: 60vh;
+}
+.p {
+  position: fixed;
+  left: 0px;
+  top: 50px;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  position: fixed;
+  animation-name: particleAnimation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.p::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100px;
+  right: 1px;
+  top: 0px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+}
+.p-1 {
+  top: var(--start-pos);
+  animation-duration: 7s;
+}
+.p-2 {
+  top: var(--start-pos);
+  animation-duration: 8s;
+}
+.p-3 {
+  top: var(--start-pos);
+  animation-duration: 10s;
+}
 .circle-container {
   display: flex;
   flex-direction: row;
