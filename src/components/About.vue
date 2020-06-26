@@ -4,8 +4,9 @@
       <div class="p p-1"></div>
       <div class="p p-2"></div>
       <div class="p p-3"></div>
+      <div class="p p-4"></div>
+      <div class="p p-5"></div>
     </div>
-
     <p class="hello float1">
       Hi, I'm
       <span class="name">JOSHUA BENNETT</span>
@@ -65,27 +66,36 @@ export default {
     var comet1 = this.$el.querySelector(".p-1");
     var comet2 = this.$el.querySelector(".p-2");
     var comet3 = this.$el.querySelector(".p-3");
+    var comet4 = this.$el.querySelector(".p-4");
+    var comet5 = this.$el.querySelector(".p-5");
 
     function setProperty(startPos, comet) {
-      comet.style.setProperty("--start-pos", startPos + "%");
+      comet.style.setProperty("--start-pos", Math.floor(startPos) + "%");
+      var display = Math.random();
+      display > 0.7
+        ? comet.style.setProperty("--display", "normal")
+        : comet.style.setProperty("--display", "none");
+    }
+    function changeAnimationTime(comet) {
+      var animationDuration = Math.random();
+      setProperty(animationDuration * 50, comet);
     }
 
-    function changeAnimationTime1() {
-      var animationDuration = Math.random();
-      setProperty(animationDuration * 100, comet1);
-    }
-    function changeAnimationTime2() {
-      var animationDuration = Math.random();
-      setProperty(animationDuration * 100, comet2);
-    }
-    function changeAnimationTime3() {
-      var animationDuration = Math.random();
-      setProperty(animationDuration * 100, comet3);
-    }
-
-    setInterval(changeAnimationTime1, 7000);
-    setInterval(changeAnimationTime2, 8000);
-    setInterval(changeAnimationTime3, 10000);
+    setInterval(() => {
+      changeAnimationTime(comet1);
+    }, 5000);
+    setInterval(() => {
+      changeAnimationTime(comet2);
+    }, 6000);
+    setInterval(() => {
+      changeAnimationTime(comet3);
+    }, 9000);
+    setInterval(() => {
+      changeAnimationTime(comet4);
+    }, 3000);
+    setInterval(() => {
+      changeAnimationTime(comet5);
+    }, 2000);
   },
   methods: {
     filterName(item) {
@@ -99,15 +109,12 @@ export default {
 <style>
 @keyframes particleAnimation {
   0% {
-    left: -400px;
-    opacity: 25%;
-  }
-  50% {
-    opacity: 100%;
+    opacity: 1;
+    left: -200px;
   }
   100% {
+    opacity: 0.1;
     left: calc(100%);
-    opacity: 25%;
   }
 }
 
@@ -116,6 +123,7 @@ export default {
   transform: rotateZ(45deg);
   height: 60vh;
   width: 60vh;
+  z-index: 3;
 }
 .p {
   position: fixed;
@@ -145,15 +153,28 @@ export default {
 }
 .p-1 {
   top: var(--start-pos);
-  animation-duration: 7s;
+  animation-duration: 5s;
+  display: var(--display);
 }
 .p-2 {
   top: var(--start-pos);
-  animation-duration: 8s;
+  animation-duration: 6s;
+  display: var(--display);
 }
 .p-3 {
   top: var(--start-pos);
-  animation-duration: 10s;
+  animation-duration: 9s;
+  display: var(--display);
+}
+.p-4 {
+  top: var(--start-pos);
+  animation-duration: 3s;
+  display: var(--display);
+}
+.p-5 {
+  top: var(--start-pos);
+  animation-duration: 2s;
+  display: var(--display);
 }
 .circle-container {
   display: flex;

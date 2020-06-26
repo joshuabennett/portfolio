@@ -117,9 +117,7 @@ export default {
   methods: {
     expand(project) {
       this.curProject = project.subname;
-      console.log(this.curProject);
       var projects = document.querySelectorAll(".project");
-      console.log(projects);
       if (this.isExpanded) {
         this.isExpanded = false;
         for (let i = 0; i < projects.length; i++) {
@@ -127,7 +125,6 @@ export default {
             projects[i].classList.remove("shrinked");
           } else {
             projects[i].style.justifyContent = "center";
-            projects[i].classList.remove("expanded");
           }
         }
       } else {
@@ -137,7 +134,6 @@ export default {
             projects[i].classList.add("shrinked");
           } else {
             projects[i].classList.add("expanded");
-            projects[i].style.justifyContent = "flex-start";
           }
         }
       }
@@ -256,10 +252,12 @@ p {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  transition: all 1s;
 }
 .after-expand {
   width: 70%;
   padding: 3em 2em 3em 3em;
+  transition: all 1s;
 }
 .thumb {
   height: 50%;
@@ -360,7 +358,7 @@ a img {
   .project {
     margin: 5px;
     height: auto;
-    min-width: calc(250px + 10vw);
+    min-width: calc(300px + 10vw);
     padding: 10px;
   }
   .shrinked {
