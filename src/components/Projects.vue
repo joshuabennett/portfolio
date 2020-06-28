@@ -252,12 +252,10 @@ p {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  transition: all 1s;
 }
 .after-expand {
   width: 70%;
   padding: 3em 2em 3em 3em;
-  transition: all 1s;
 }
 .thumb {
   height: 50%;
