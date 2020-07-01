@@ -3,7 +3,7 @@
     <div class="stars"></div>
     <app-header class="push"></app-header>
     <div>
-      <transition name="fade" mode="out-in">
+      <transition name="bigfade" mode="out-in">
         <router-view></router-view>
       </transition>
       <!-- <app-projects></app-projects> -->
@@ -150,11 +150,11 @@ a:visited {
     repeat top center;
   z-index: 0;
 }
-.fade-enter-active,
-.fade-leave-active {
+.bigfade-enter-active,
+.bigfade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.bigfade-enter, .bigfade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 
