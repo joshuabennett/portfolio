@@ -149,7 +149,6 @@ a:visited {
   background: url(http://www.script-tutorials.com/demos/360/images/stars.png)
     repeat top center;
   z-index: 0;
-  overflow: hidden;
 }
 .fade-enter-active,
 .fade-leave-active {
