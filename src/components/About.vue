@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       images: [
         "icon-css3.svg",
@@ -58,8 +58,8 @@ export default {
         "icon-sass.svg",
         "icon-vscode.svg",
         "icon-vue.svg",
-        "icon-react.svg"
-      ]
+        "icon-react.svg",
+      ],
     };
   },
   mounted() {
@@ -101,8 +101,8 @@ export default {
     filterName(item) {
       var str = item.substring(item.indexOf("-") + 1, item.indexOf("."));
       return str;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -177,9 +177,11 @@ export default {
   display: var(--display);
 }
 .circle-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  z-index: 5;
 }
 .circle {
   padding: 5px;
