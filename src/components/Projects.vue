@@ -307,6 +307,9 @@ a img {
     min-width: calc(300px + 10vw);
     padding: 10px;
   }
+  .projects-contain {
+    height: 100%;
+  }
   .shrinked {
     margin: 0;
     height: 0;
@@ -321,10 +324,6 @@ a img {
   html,
   #app {
     overflow: auto;
-  }
-  .projects {
-    transform: translateY(0);
-    top: 0;
   }
   .buttons-group .button a {
     font-size: 14px;
