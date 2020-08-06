@@ -17,23 +17,26 @@
       <mark class="city">Austin, Texas</mark> looking for an opportunity for an internship or full-time position as a
       <bold>Junior Web Developer</bold>
     </p>
-    <div class="circle-container">
+    <ul class="circle-container">
       <button class="circle">
-        <a href="https://github.com/joshuabennett">
+        <a href="https://github.com/joshuabennett" aria-label="My Github Profile">
           <img :src="'assets/icon-github.png'" />
         </a>
       </button>
       <button class="circle">
-        <a href="https://www.linkedin.com/in/joshua-bennett-9b964257/">
+        <a
+          href="https://www.linkedin.com/in/joshua-bennett-9b964257/"
+          aria-label="My LinkedIn Profile"
+        >
           <img :src="'assets/icon-linkedin.png'" />
         </a>
       </button>
       <button class="circle">
-        <a href="mailto:joshuabennett@utexas.edu">
+        <a href="mailto:joshuabennett@utexas.edu" aria-label="Send me an Email">
           <img :src="'assets/icon-google.png'" />
         </a>
       </button>
-    </div>
+    </ul>
     <p class="hello">I'm pretty ok at these</p>
     <div class="smaller-circle"></div>
     <ul class="logo-container">
@@ -42,6 +45,14 @@
         <caption>{{ filterName(item) }}</caption>
       </li>
     </ul>
+    <a href="assets/joshua-bennett-resume.pdf" download>
+      <button class="button download-button">
+        <span class="icon">
+          <i class="fas fa-download"></i>
+        </span>
+        <span>Download Resume</span>
+      </button>
+    </a>
   </section>
 </template>
 
@@ -106,7 +117,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss'>
 @keyframes particleAnimation {
   0% {
     opacity: 1;
@@ -116,6 +127,12 @@ export default {
     opacity: 0.1;
     left: calc(100%);
   }
+}
+
+li,
+ul,
+header {
+  display: block;
 }
 
 mark {
@@ -205,9 +222,7 @@ bold {
   align-items: center;
   text-align: left;
   padding: 25px 50px 25px 50px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 100%;
 }
 .name {
   text-transform: uppercase;
@@ -219,6 +234,7 @@ bold {
   font-weight: bold;
 }
 p,
+header,
 caption {
   color: white;
   font-family: "Gudea", sans-serif;
@@ -226,7 +242,7 @@ caption {
 }
 .hello {
   background: rgba(0, 0, 0, 0.5);
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px;
   border-radius: 15px;
   margin: 5px;
   transform: translatey(0px);
@@ -259,8 +275,29 @@ br {
   color: white;
 }
 .item caption {
+  display: block;
   text-transform: uppercase;
   font-size: 12px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.download-button {
+  z-index: 5;
+  margin: 1em;
+  background: transparent;
+  color: white;
+  &:hover {
+    color: plum;
+    border: 1px solid plum;
+  }
+  &:focus {
+    color: lightgray;
+    border: 1px solid lightgray;
+  }
 }
 @keyframes float {
   0% {

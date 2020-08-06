@@ -2,25 +2,23 @@
   <div id="app">
     <div class="stars"></div>
     <app-header class="push"></app-header>
-    <div>
-      <transition name="bigfade" mode="out-in">
-        <router-view></router-view>
-      </transition>
-      <!-- <app-projects></app-projects> -->
-      <!-- <app-resume></app-resume> -->
-    </div>
+    <transition name="bigfade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 import Resume from "./components/Resume.vue";
 import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 import Projects from "./components/Projects.vue";
 import About from "./components/About.vue";
 
 export default {
   components: {
     "app-header": Header,
+    "app-footer": Footer,
     "app-about": About,
     "app-resume": Resume,
     "app-projects": Projects,
@@ -49,7 +47,6 @@ export default {
 body,
 html,
 #app {
-  overflow: auto;
   margin: 0;
   padding: 0;
   height: calc(var(--vh, 1vh) * 100);
@@ -59,12 +56,6 @@ html,
 }
 html {
   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-  overflow: hidden;
-}
-.info {
-  height: 30vh;
-  width: 100vw;
-  transform: translateY(-20%);
 }
 .stuff {
   background: rgba(0, 0, 0, 0.3);
@@ -103,14 +94,6 @@ html {
 * {
   margin: 0;
   padding: 0;
-}
-header {
-  color: #ffffff;
-  display: block;
-  font: 14px/1.3 Arial, sans-serif;
-  height: 50px;
-  position: relative;
-  z-index: 5;
 }
 h2 {
   margin-top: 30px;

@@ -39,14 +39,14 @@
         </div>
         <div class="columns">
           <div class="column is-one-third section-title has-text-right">SKILLS</div>
-          <div class="column is-two-thirds section-info">
-            <p>HTML, CSS, SASS, Bulma</p>
-            <p>JavaScript, React, Vue</p>
-            <p>Adobe Photoshop</p>
-            <p>Visual Studio Code, Git, Slack, Webpack, NPM</p>
-            <p>Linux, Windows</p>
-            <p>Firebase, Google Domains</p>
-          </div>
+          <ul class="column is-two-thirds section-info">
+            <li>HTML, CSS, SASS, Bulma</li>
+            <li>JavaScript, React, Vue</li>
+            <li>Adobe Photoshop</li>
+            <li>Visual Studio Code, Git, Slack, Webpack, NPM</li>
+            <li>Linux, Windows</li>
+            <li>Firebase, Google Domains</li>
+          </ul>
         </div>
         <div class="columns">
           <div class="column is-one-third section-title has-text-right">PROJECTS</div>
@@ -119,12 +119,14 @@ export default {};
   justify-content: center;
   align-items: center;
   text-align: left;
-  padding: 25px 50px 25px 50px;
+  padding: 25px 50px;
   width: 100vw;
-  position: relative;
 }
 .resume-section {
   width: 55vw;
+  color: white;
+  font-family: "Gudea", sans-serif;
+  font-size: calc(10px + 0.4vw);
 }
 .sections-container {
   display: flex;

@@ -19,14 +19,6 @@
             <router-link to="/projects" class="text">PROJECTS</router-link>
           </div>
         </li>
-        <li>
-          <div class="svg-wrapper-two">
-            <svg height="40" width="120" xmlns="http://www.w3.org/2000/svg">
-              <rect class="shape" height="40" width="120" />
-            </svg>
-            <router-link to="/resume" class="text">RESUME</router-link>
-          </div>
-        </li>
       </ul>
     </div>
   </nav>

@@ -1,10 +1,10 @@
 <template>
   <section class="projects">
-    <p class="introduction float1">
+    <header class="introduction float1">
       Hi, these are
       <span class="name">MY PROJECTS</span>
-    </p>
-    <div class="projects-contain">
+    </header>
+    <ul class="projects-contain">
       <transition-group class="projects-container" name="fade" :duration="1000">
         <app-project
           v-for="project in projects"
@@ -17,7 +17,7 @@
           v-on:update-expanded="isExpanded = !isExpanded"
         ></app-project>
       </transition-group>
-    </div>
+    </ul>
   </section>
 </template>
 
@@ -153,10 +153,8 @@ p {
   justify-content: center;
   align-items: center;
   text-align: left;
-  padding: 25px 50px 25px 50px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  padding: 25px 50px;
+  height: 100%;
 }
 .projects-container {
   display: flex;
