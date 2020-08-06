@@ -68,14 +68,14 @@ export default {
       this.title == "MORE INFO"
         ? (this.title = "LESS INFO")
         : (this.title = "MORE INFO");
-    }
+    },
   },
-  data: function() {
+  data: function () {
     return {
       title: "MORE INFO",
       curProject: "",
-      isExpanded: false
+      isExpanded: false,
     };
-  }
+  },
 };
 </script>

@@ -1,48 +1,48 @@
 <template>
-  <div class="about has-text-centered">
-    <div class="sky">
-      <div class="p p-1"></div>
-      <div class="p p-2"></div>
-      <div class="p p-3"></div>
-      <div class="p p-4"></div>
-      <div class="p p-5"></div>
-    </div>
-    <p class="hello float1">
+  <section class="about has-text-centered">
+    <ul class="sky">
+      <li class="p p-1"></li>
+      <li class="p p-2"></li>
+      <li class="p p-3"></li>
+      <li class="p p-4"></li>
+      <li class="p p-5"></li>
+    </ul>
+    <header class="hello float1">
       Hi, I'm
       <span class="name">JOSHUA BENNETT</span>
-    </p>
+    </header>
     <p class="hello float2">
       I'm a self taught
       <bold>Front-End Web Developer{{" "}}</bold>located in
-      <span class="city">Austin, Texas</span> looking for an opportunity for an internship or full-time position as a
+      <mark class="city">Austin, Texas</mark> looking for an opportunity for an internship or full-time position as a
       <bold>Junior Web Developer</bold>
     </p>
     <div class="circle-container">
-      <div class="circle">
+      <button class="circle">
         <a href="https://github.com/joshuabennett">
           <img :src="'assets/icon-github.png'" />
         </a>
-      </div>
-      <div class="circle">
+      </button>
+      <button class="circle">
         <a href="https://www.linkedin.com/in/joshua-bennett-9b964257/">
           <img :src="'assets/icon-linkedin.png'" />
         </a>
-      </div>
-      <div class="circle">
+      </button>
+      <button class="circle">
         <a href="mailto:joshuabennett@utexas.edu">
           <img :src="'assets/icon-google.png'" />
         </a>
-      </div>
+      </button>
     </div>
     <p class="hello">I'm pretty ok at these</p>
     <div class="smaller-circle"></div>
-    <div class="logo-container">
-      <div class="item" v-for="item in images" :key="item">
+    <ul class="logo-container">
+      <li class="item" v-for="item in images" :key="item">
         <img class="logo" :src="'assets/'+item" />
-        <p>{{ filterName(item) }}</p>
-      </div>
-    </div>
-  </div>
+        <caption>{{ filterName(item) }}</caption>
+      </li>
+    </ul>
+  </section>
 </template>
 
 <script>
@@ -116,6 +116,10 @@ export default {
     opacity: 0.1;
     left: calc(100%);
   }
+}
+
+mark {
+  background-color: transparent;
 }
 
 .sky {
@@ -214,7 +218,8 @@ bold {
   letter-spacing: calc(1px + 0.2vw);
   font-weight: bold;
 }
-p {
+p,
+caption {
   color: white;
   font-family: "Gudea", sans-serif;
   font-size: calc(10px + 0.4vw);
@@ -253,7 +258,7 @@ p {
 br {
   color: white;
 }
-.item p {
+.item caption {
   text-transform: uppercase;
   font-size: 12px;
 }

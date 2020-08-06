@@ -1,5 +1,5 @@
 <template>
-  <div class="resume">
+  <section class="resume">
     <p class="resume-hello float1">
       Hi, this is
       <span class="name">MY RESUME</span>
@@ -104,7 +104,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

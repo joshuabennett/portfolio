@@ -9,24 +9,21 @@
       <!-- <app-projects></app-projects> -->
       <!-- <app-resume></app-resume> -->
     </div>
-    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import Resume from "./components/Resume.vue";
 import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
 import Projects from "./components/Projects.vue";
 import About from "./components/About.vue";
 
 export default {
   components: {
     "app-header": Header,
-    "app-footer": Footer,
     "app-about": About,
     "app-resume": Resume,
-    "app-projects": Projects
+    "app-projects": Projects,
   },
   created() {
     function setDocHeight() {
@@ -36,15 +33,15 @@ export default {
       );
     }
 
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function () {
       setDocHeight();
     });
-    window.addEventListener("orientationchange", function() {
+    window.addEventListener("orientationchange", function () {
       setDocHeight();
     });
 
     setDocHeight();
-  }
+  },
 };
 </script>
 

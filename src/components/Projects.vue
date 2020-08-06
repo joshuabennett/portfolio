@@ -1,5 +1,5 @@
 <template>
-  <div class="projects">
+  <section class="projects">
     <p class="introduction float1">
       Hi, these are
       <span class="name">MY PROJECTS</span>
@@ -18,7 +18,7 @@
         ></app-project>
       </transition-group>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -26,9 +26,9 @@ import Project from "../components/Project.vue";
 
 export default {
   components: {
-    "app-project": Project
+    "app-project": Project,
   },
-  data: function() {
+  data: function () {
     return {
       isExpanded: false,
       curProject: "",
@@ -49,8 +49,8 @@ export default {
             "Axios",
             "FontAwesome",
             "Firebase",
-            "Firestore"
-          ]
+            "Firestore",
+          ],
         },
         {
           name: "Reddit Search",
@@ -59,7 +59,7 @@ export default {
           github: "https://github.com/joshuabennett/reddit-search",
           info:
             "Search reddit for the top comments on any subject without all the useless bulk.",
-          tools: ["vue.js", "bulma", "Google Custom Search API", "snoowrap"]
+          tools: ["vue.js", "bulma", "Google Custom Search API", "snoowrap"],
         },
         {
           name: "Brackets",
@@ -68,7 +68,7 @@ export default {
           github: "https://github.com/joshuabennett/bracket-generator",
           info:
             "Built to create tournament brackets for Smash Bros. Ultimate. Create either a single, double, or round robin tournament for up to 16 players.",
-          tools: ["vue.js", "bulma"]
+          tools: ["vue.js", "bulma"],
         },
         {
           name: "Anime Suggest",
@@ -77,7 +77,7 @@ export default {
           github: "https://github.com/joshuabennett/anime-recommendations",
           info:
             "Takes the users myanimelist.net username and evaluates their top watched anime. Then recommends 5 animes based on a score given to recommended Animes for each Anime in their list using the Jikan Animelist API.",
-          tools: ["vanilla js", "bulma", "Jikan API"]
+          tools: ["vanilla js", "bulma", "Jikan API"],
         },
         {
           name: "Mars Scoresheet",
@@ -86,11 +86,11 @@ export default {
           github: "https://github.com/joshuabennett/mars-scoresheet",
           info:
             "An app that tallys and adds the scores for a board game called Terraforming Mars. Shows results of the game and provides insight into each players best category scores.",
-          tools: ["vue.js", "bulma", "vee-validate"]
-        }
-      ]
+          tools: ["vue.js", "bulma", "vee-validate"],
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

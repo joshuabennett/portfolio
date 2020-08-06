@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <nav>
     <!-- <img class='header-img' src='../assets/moon.svg'> -->
     <div class="tabs is-centered">
       <ul>
@@ -29,7 +29,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
