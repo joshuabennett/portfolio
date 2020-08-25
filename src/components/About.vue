@@ -17,7 +17,7 @@
       <mark class="city">Austin, Texas</mark> looking for an opportunity for an internship or full-time position as a
       <bold>Junior Web Developer</bold>
     </p>
-    <ul class="circle-container">
+    <div class="circle-container">
       <button class="circle">
         <a href="https://github.com/joshuabennett" aria-label="My Github Profile">
           <img :src="'assets/icon-github.png'" />
@@ -36,8 +36,7 @@
           <img :src="'assets/icon-google.png'" />
         </a>
       </button>
-    </ul>
-    <p class="hello">I'm pretty ok at these</p>
+    </div>
     <div class="smaller-circle"></div>
     <ul class="logo-container">
       <li class="item" v-for="item in images" :key="item">
@@ -223,6 +222,7 @@ bold {
   text-align: left;
   padding: 25px 50px 25px 50px;
   height: 100%;
+  overflow-x: hidden;
 }
 .name {
   text-transform: uppercase;
