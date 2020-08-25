@@ -201,6 +201,7 @@ mark {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 10px;
   z-index: 5;
 }
 .circle {
@@ -334,6 +335,14 @@ br {
   .about {
     transform: translateY(0);
     top: 0;
+  }
+  .logo {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    width: 30px;
+    max-height: 35px;
+    fill: white;
   }
 }
 </style>
