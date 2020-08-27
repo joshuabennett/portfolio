@@ -64,28 +64,44 @@
             <br />
             <p>
               <span style="font-weight: bold;">Tournament Brackets Manager</span> -
-              <a href="https://brackets.joshuabennett.dev">brackets.joshuabennett.dev</a>
+              <a
+                href="https://brackets.joshuabennett.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >brackets.joshuabennett.dev</a>
             </p>
             <p>Built using Vue.js and Bulma to make tournament brackets for 4 to 16 players in various formats. Primarly built to showcase my mastery of Vue.js and it's component communication.</p>
             <p class="techs">Vue.js, Bulma, CSS, HTML</p>
             <br />
             <p>
               <span style="font-weight: bold;">Terraforming Mars Board Game Scoresheet</span> -
-              <a href="https://mars.joshuabennett.dev">mars.joshuabennett.dev</a>
+              <a
+                href="https://mars.joshuabennett.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >mars.joshuabennett.dev</a>
             </p>
             <p>Created a mobile-friendly web application that evaluates the scores of players in the popular board game ‘Terraforming Mars’. Incorporated the vee-validate library to validate all user inputs. Exploited SASS to quickly establish a corresponding theme with Bulma.</p>
             <p class="techs">Vue.js, Bulma, CSS/SASS, HTML, Vee-validate</p>
             <br />
             <p>
               <span style="font-weight: bold;">Anime Recommendations</span> -
-              <a href="https://anime.joshuabennett.dev">anime.joshuabennett.dev</a>
+              <a
+                href="https://anime.joshuabennett.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >anime.joshuabennett.dev</a>
             </p>
             <p>Developed an algorithm using the Jikan API to evaluate a MyAnimeList.net user’s collection of watched anime and generate the 5 best recommendations for anime they should watch.</p>
             <p class="techs">Vanilla Javascript, Bulma, Jikan API, CSS, HTML</p>
             <br />
             <p>
               <span style="font-weight: bold;">Reddit Search</span> -
-              <a href="https://reddit.joshuabennett.dev">reddit.joshuabennett.dev</a>
+              <a
+                href="https://reddit.joshuabennett.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >reddit.joshuabennett.dev</a>
             </p>
             <p>Leveraged two APIs to perform a custom search on Reddit, but using Google’s superior search algorithms. Discarded extraneous information and pleasantly displayed results using Vue.js and Bulma.</p>
             <p class="techs">Vue.js, Bulma, Google Custom Search API, snoowrap</p>

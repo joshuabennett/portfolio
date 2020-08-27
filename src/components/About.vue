@@ -44,7 +44,7 @@
         <caption>{{ filterName(item) }}</caption>
       </li>
     </ul>
-    <a href="assets/joshua-bennett-resume.pdf" download>
+    <a class="resume-download" href="assets/joshua-bennett-resume.pdf" download>
       <button class="button download-button">
         <span class="icon">
           <i class="fas fa-download"></i>
@@ -221,7 +221,7 @@ bold {
   justify-content: center;
   align-items: center;
   text-align: left;
-  padding: 25px 50px 25px 50px;
+  padding: 0 10px 0 10px;
   height: 100%;
   overflow-x: hidden;
 }
@@ -284,6 +284,10 @@ br {
 .item {
   display: flex;
   flex-direction: column;
+}
+
+.resume-download {
+  margin: 1em;
 }
 
 .download-button {

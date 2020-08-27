@@ -9,12 +9,9 @@
         <app-project
           v-for="project in projects"
           class="project"
-          v-show="!isExpanded || curProject == project.subname"
           :project="project"
           :class="project.subname"
           :key="project.subname"
-          v-on:update-project="curProject = $event"
-          v-on:update-expanded="isExpanded = !isExpanded"
         ></app-project>
       </transition-group>
     </ul>
@@ -40,7 +37,7 @@ export default {
             "arena-stats.firebaseapp.com/login?email=test@test.com&password=test123",
           github: "https://github.com/joshuabennett/mtg-arena-stats",
           info:
-            "A React Web App that allows you to import decks youve built using Wizards of the Coasts MTG Arena application in Limited Draft Environment. It then stores the decks in your profile and analyzes the data for statistics and sharing.",
+            "A React Web App that allows you to import decks youve built using Wizards of the Coasts MTG Arena application in a Limited Draft Environment. It then stores the decks in your profile and analyzes the data for local and global statistics.",
           tools: [
             "React",
             "SASS",
@@ -53,12 +50,21 @@ export default {
           ],
         },
         {
+          name: "Anime Suggest",
+          subname: "anime",
+          link: "anime.joshuabennett.dev",
+          github: "https://github.com/joshuabennett/anime-recommendations",
+          info:
+            "Takes the users myanimelist.net username and evaluates their top watched anime. Then recommends 5 animes based on a custom algorithm that analyzes recommendations given by users on the website and weights them accordingly using the Jikan Animelist API.",
+          tools: ["vanilla js", "bulma", "Jikan API"],
+        },
+        {
           name: "Reddit Search",
           subname: "reddit",
           link: "reddit.joshuabennett.dev",
           github: "https://github.com/joshuabennett/reddit-search",
           info:
-            "Search reddit for the top comments on any subject without all the useless bulk.",
+            "Quickly search reddit for the top comments on any subject. Utilizes google to return results that are more relevant that wading through all the useless bulk reddit's own search feature gives.",
           tools: ["vue.js", "bulma", "Google Custom Search API", "snoowrap"],
         },
         {
@@ -67,17 +73,8 @@ export default {
           link: "brackets.joshuabennett.dev",
           github: "https://github.com/joshuabennett/bracket-generator",
           info:
-            "Built to create tournament brackets for Smash Bros. Ultimate. Create either a single, double, or round robin tournament for up to 16 players.",
+            "Create tournament brackets for Smash Bros. Ultimate or any other competition. Create either a single, double, or round robin tournament for up to 16 players, and then use the app to record wins and losses to progress the bracket.",
           tools: ["vue.js", "bulma"],
-        },
-        {
-          name: "Anime Suggest",
-          subname: "anime",
-          link: "anime.joshuabennett.dev",
-          github: "https://github.com/joshuabennett/anime-recommendations",
-          info:
-            "Takes the users myanimelist.net username and evaluates their top watched anime. Then recommends 5 animes based on a score given to recommended Animes for each Anime in their list using the Jikan Animelist API.",
-          tools: ["vanilla js", "bulma", "Jikan API"],
         },
         {
           name: "Mars Scoresheet",
@@ -85,7 +82,7 @@ export default {
           link: "mars.joshuabennett.dev",
           github: "https://github.com/joshuabennett/mars-scoresheet",
           info:
-            "An app that tallys and adds the scores for a board game called Terraforming Mars. Shows results of the game and provides insight into each players best category scores.",
+            "An app that tallys and adds the scores for a board game called Terraforming Mars. Validates all inputs before showing the results of the game and providing insight into each players best and worse category scores.",
           tools: ["vue.js", "bulma", "vee-validate"],
         },
       ],
@@ -95,30 +92,24 @@ export default {
 </script>
 
 <style lang='scss'>
+::-webkit-scrollbar {
+  width: 10px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+}
 p {
   color: white;
   font-family: "Gudea", sans-serif;
 }
 .tag {
   margin: 5px;
-}
-.github-button {
-  margin-top: 5px;
-  &:visited {
-    color: gray;
-  }
-  &:hover {
-    color: black;
-  }
-}
-
-.buttons-group .button {
-  background: transparent;
-  border-radius: 0;
-  a {
-    color: white;
-    font-size: 0.8vw;
-  }
 }
 .tools {
   margin-right: 3px;
@@ -150,7 +141,6 @@ p {
 .projects {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: left;
   padding: 25px 50px;
@@ -158,17 +148,14 @@ p {
 }
 .projects-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  flex-wrap: wrap;
 }
 .projects-contain {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
+  margin-top: 0.5em;
+  height: 70%;
+  overflow-y: scroll;
 }
 .project {
   display: flex;
@@ -176,13 +163,9 @@ p {
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  width: 20vw;
-  height: 15vw;
-  margin: 50px 20px 0px 20px;
+  width: 80vw;
+  margin: 0.5em 1em 1.5em 1em;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
   animation: float 5s ease-in-out infinite;
   transition: all 1s;
   &:hover {
@@ -194,22 +177,22 @@ p {
 }
 .before-expand {
   display: flex;
+  width: 50%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 100%;
 }
 .after-expand {
-  width: 70%;
-  padding: 3em 2em 3em 3em;
-}
-.thumb {
-  height: 50%;
-}
-.more-info:hover {
-  background-color: rgb(33, 75, 129);
-  box-shadow: 0 0 0 0.125em purple;
-  /* animation: pulse 3s ease-in-out infinite; */
+  margin: 1em;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 45%;
+  padding: 1em 0.5em 1em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .float1 {
   animation: float 5s ease-in-out infinite;
@@ -237,18 +220,6 @@ a img {
   fill: white;
   opacity: 1;
 }
-.expanded {
-  width: 90vw;
-  transition: width 2s;
-}
-// .shrinked {
-//   margin: 0px;
-//   padding: 0px;
-//   width: 0px;
-//   height: 0px;
-//   opacity: 0;
-//   transition: all 0.5s;
-// }
 .fade-enter-active {
   position: absolute;
   transition: opacity 1.5s;
@@ -298,32 +269,38 @@ a img {
   }
 }
 @media only screen and (max-width: 1336px) {
-  .projects-container {
-    width: 90vw;
-  }
-  .project {
-    margin: 5px;
-    height: auto;
-    min-width: calc(300px + 10vw);
-    padding: 10px;
-  }
-  .projects-contain {
-    height: 100%;
-  }
-  .shrinked {
-    margin: 0;
-    height: 0;
-    padding: 0;
+  ::-webkit-scrollbar {
     width: 0;
   }
+  .projects-contain {
+    width: 100%;
+  }
+  .project {
+    width: 90%;
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+    flex-direction: column;
+  }
+  .projects {
+    padding: 15px 0 0 0;
+  }
+  .project-title {
+    font-size: 4.5vw;
+  }
   .after-expand {
-    padding: 0px 0px 0px 10px;
+    margin: 0.25em;
+    width: 100%;
+    padding: 1em 1em 0px 1em;
     justify-content: space-between;
+  }
+  .before-expand {
+    width: 100%;
+    margin: 0.5em;
   }
   body,
   html,
   #app {
-    overflow: auto;
+    overflow-y: scroll;
   }
   .buttons-group .button a {
     font-size: 14px;
@@ -331,7 +308,7 @@ a img {
   .buttons-group,
   .buttons-group .button {
     width: 100%;
-    margin: 2px;
+    margin: 5px 0 1em 0;
   }
 }
 </style>

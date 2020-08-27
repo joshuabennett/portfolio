@@ -53,6 +53,7 @@ html,
 }
 .push {
   margin-top: 1vw;
+  height: 40px;
 }
 html {
   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
@@ -142,6 +143,11 @@ a:visited {
   .info {
     transform: translateY(0);
     height: auto;
+  }
+}
+@media only screen and (max-height: 650px) {
+  .about {
+    padding-top: 75px;
   }
 }
 </style>
